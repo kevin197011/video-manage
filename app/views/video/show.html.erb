@@ -4,6 +4,31 @@
   <video id="videoElement" controls autoplay width="640" height="360"></video>
 </div>
 
+<style>
+  body {
+    display: flex;
+    flex-direction: column; /* 垂直方向排列 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 设置容器高度为视口高度 */
+    margin: 0; /* 去掉默认的 margin */
+    background-color: #f0f0f0; /* 可选：设置背景色 */
+  }
+
+  h1 {
+    margin-bottom: 20px; /* 标题和视频之间的间距 */
+  }
+
+  #video-container {
+    text-align: center; /* 居中容器内的内容 */
+  }
+
+  video {
+    width: 640px; /* 设置视频宽度 */
+    height: 360px; /* 设置视频高度 */
+  }
+</style>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const videoUrl = "<%= @video_url %>";
