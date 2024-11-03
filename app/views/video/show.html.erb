@@ -1,0 +1,24 @@
+<h1>FLV 视频播放</h1>
+
+<div id="video-container">
+  <video id="videoElement" controls autoplay width="640" height="360"></video>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const videoUrl = "<%= @video_url %>";
+    if (flvjs.isSupported()) {
+      const videoElement = document.getElementById("videoElement");
+      const flvPlayer = flvjs.createPlayer({
+        type: "flv",
+        url: videoUrl
+      });
+      videoElement.muted = true;
+      flvPlayer.attachMediaElement(videoElement);
+      flvPlayer.load();
+      flvPlayer.play();
+    } else {
+      alert("您的浏览器不支持 FLV 播放，请使用支持的浏览器。");
+    }
+  });
+</script>
